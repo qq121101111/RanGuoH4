@@ -14,7 +14,19 @@ public class Queue {
    }
     
      public int getSize() {
-       return size;
+       return size
+   }
+     
+       public void enqueue(String string) {
+       Node n = new Node();
+       n.setData(string);
+       n.setBack(last.getBack());
+       last.getBack().setNext(n);
+       last.setBack(n);
+       n.setNext(last);
+      
+       size++;
+       }
    }
     
 
