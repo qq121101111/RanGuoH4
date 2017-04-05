@@ -47,7 +47,16 @@ public class Queue {
       
        return front.getNext().getData();
    }
-  
+       
+     public void printQueue() {
+       System.out.print("Front => ");
+       Node temp = front.getNext();
+       while (temp != last) {
+           System.out.print(temp.getData() + " ");
+           temp = temp.getNext();
+       }
+       System.out.println("");
+   }
     
 
 
