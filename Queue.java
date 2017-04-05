@@ -14,7 +14,7 @@ public class Queue {
      }
     
      public int getSize() {
-       return size
+       return size;
        }
      
        public void enqueue(String string) {
@@ -39,7 +39,15 @@ public class Queue {
        size--;
        return n.getData();
        }
+      
+     
+     public String peek() {
+       if(size == 0)
+           return null;
+      
+       return front.getNext().getData();
    }
+  
     
 
 
