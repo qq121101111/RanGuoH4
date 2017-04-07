@@ -1,10 +1,10 @@
 public class Queue {
-
+  //properties
    private Node front;
    private Node last;
    private int size;
    
-   
+  //constructor 
     Queue() {
        front = new Node();
        last = new Node();
