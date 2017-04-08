@@ -26,4 +26,17 @@ public class Stack {
       
        size++;
    }
+    public String pop() {
+       if(size == 0)
+           return null;
+      
+       Node n = front.getNext();
+      
+       front.setNext(n.getNext());
+       n.getNext().setBack(front);
+       size--;
+       return n.getData();
+   }
+  
+  
 }
