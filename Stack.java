@@ -43,7 +43,16 @@ public class Stack {
       
        return front.getNext().getData();
    }
-  
+     //print method
+     public void printStack() {
+       System.out.print("Top => ");
+       Node temp = front.getNext();
+       while (temp != last) {
+           System.out.print(temp.getData() + " ");
+           temp = temp.getNext();
+       }
+       System.out.println("");
+   }
   
   
 }
