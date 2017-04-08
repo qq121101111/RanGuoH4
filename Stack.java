@@ -11,7 +11,9 @@ public class Stack {
        last.setBack(front);
        size = 0;
    }
-
+    public int getSize() {
+       return size;
+   }
 
 
 }
