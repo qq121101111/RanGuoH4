@@ -15,5 +15,15 @@ public class Stack {
        return size;
    }
 
-
+   public void push(String string) {
+       Node n = new Node();
+       n.setData(string);
+      
+       front.getNext().setBack(n);
+       n.setNext(front.getNext());
+       front.setNext(n);
+       n.setBack(front);
+      
+       size++;
+   }
 }
