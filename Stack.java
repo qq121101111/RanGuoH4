@@ -37,6 +37,13 @@ public class Stack {
        size--;
        return n.getData();
    }
+     public String peek() {
+       if(size == 0)
+           return null;      
+      
+       return front.getNext().getData();
+   }
+  
   
   
 }
