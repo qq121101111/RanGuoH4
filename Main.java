@@ -9,8 +9,22 @@ public class Main {
        stack.push("E");
        stack.push("F");
        stack.push("G");
+       Queue queue = stackToQueue(stack);
        
+       // print both
+       stack.printStack();
+       queue.printQueue();
       
+       System.out.println("-----------------------------------");
+      
+       stack = queueToStack(queue);
+       stack.printStack();
+       queue.printQueue();
+      
+       System.out.println("-----------------------------------");
+       Stack newStack = stackToStack(stack);
+       stack.printStack();
+       newStack.printStack();      
      
 
      
@@ -60,5 +74,22 @@ public class Main {
        }
        return stack;
    }
+      static Stack stackToStack(Stack stack) {
+       Stack tempStack = new Stack();
+       while(stack.peek() != null) {
+           tempStack.push(stack.pop());
+       }
+      
+       // Now tempStack has reverse elements, and original
+       // stack is empty
+       // creating new Stack to store result
+       Stack resultStack = new Stack();
+       while(tempStack.peek()!= null) {
+           String s = tempStack.pop();
+           resultStack.push(s);
+           stack.push(s);
+       }
+       return resultStack;
+      }
 }
     
