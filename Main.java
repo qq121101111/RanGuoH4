@@ -10,9 +10,30 @@ public class Main {
        stack.push("F");
        stack.push("G");
        
-       Queue queue = stackToQueue(stack);
+      
      
+
      
    }
-
+   
+    static Queue stackToQueue(Stack stack) {
+       Stack tempStack = new Stack();
+       Queue queue = new Queue();
+      
+       // create queue at the same time create a temporary stack
+       while(stack.peek() != null) {
+           String s = stack.pop();
+           queue.enqueue(s);
+           tempStack.push(s);
+       }
+      
+       // restore original stack
+       while(tempStack.peek() != null) {
+           String s = tempStack.pop();
+           stack.push(s);
+       }
+      
+       return queue;
+   }
 }
+    
